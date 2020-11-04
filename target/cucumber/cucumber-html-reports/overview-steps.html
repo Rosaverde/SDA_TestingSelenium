@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Google searching tests</td>
+      <td>04 Nov 2020, 22:49</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.homePageIsOpened()</td>
+              <td>7</td>
+              <td class="duration" data-value="4324469557">4.324</td>
+              <td class="duration" data-value="4324469557">5.501</td>
+              <td class="duration" data-value="30271286900">30.271</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.iAuthenticateUsingCredentials(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="1484011500">1.484</td>
+              <td class="duration" data-value="1484011500">1.484</td>
+              <td class="duration" data-value="1484011500">1.484</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.iCanSeeErrorMessage(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="105454783">0.105</td>
+              <td class="duration" data-value="105454783">0.130</td>
+              <td class="duration" data-value="632728700">0.632</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.iCanSeeMyAccountPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="43875700">0.043</td>
+              <td class="duration" data-value="43875700">0.043</td>
+              <td class="duration" data-value="43875700">0.043</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.iClickSignInButton()</td>
+              <td>6</td>
+              <td class="duration" data-value="1169821550">1.169</td>
+              <td class="duration" data-value="1169821550">1.465</td>
+              <td class="duration" data-value="7018929300">7.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.iFillEmailAddressField(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="142055433">0.142</td>
+              <td class="duration" data-value="142055433">0.150</td>
+              <td class="duration" data-value="852332600">0.852</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.iFillPasswordField(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="133397983">0.133</td>
+              <td class="duration" data-value="133397983">0.144</td>
+              <td class="duration" data-value="800387900">0.800</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.iOpenLoginPage()</td>
+              <td>7</td>
+              <td class="duration" data-value="1437380028">1.437</td>
+              <td class="duration" data-value="1437380028">1.776</td>
+              <td class="duration" data-value="10061660200">10.061</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.AuthenticationStepdefs.loginPageIsOpened()</td>
+              <td>7</td>
+              <td class="duration" data-value="589132100">0.589</td>
+              <td class="duration" data-value="589132100">0.608</td>
+              <td class="duration" data-value="4123924700">4.123</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.GoogleStepdefs.googlePageIsOpened()</td>
+              <td>3</td>
+              <td class="duration" data-value="1362128366">1.362</td>
+              <td class="duration" data-value="1362128366">1.398</td>
+              <td class="duration" data-value="4086385100">4.086</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.GoogleStepdefs.iCanSeeSearchResults()</td>
+              <td>3</td>
+              <td class="duration" data-value="52341533">0.052</td>
+              <td class="duration" data-value="52341533">0.063</td>
+              <td class="duration" data-value="157024600">0.157</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.GoogleStepdefs.iCloseCookieFrame()</td>
+              <td>3</td>
+              <td class="duration" data-value="839639000">0.839</td>
+              <td class="duration" data-value="839639000">0.938</td>
+              <td class="duration" data-value="2518917000">2.518</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.GoogleStepdefs.iSearchForPhrase(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="1225821100">1.225</td>
+              <td class="duration" data-value="1225821100">1.331</td>
+              <td class="duration" data-value="3677463300">3.677</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.Hooks.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>10</td>
+              <td class="duration" data-value="848427260">0.848</td>
+              <td class="duration" data-value="848427260">1.547</td>
+              <td class="duration" data-value="8484272600">8.484</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.sda.training.steps.Hooks.beforeScenario(io.cucumber.java.Scenario)</td>
+              <td>10</td>
+              <td class="duration" data-value="5519346720">5.519</td>
+              <td class="duration" data-value="5519346720">6.998</td>
+              <td class="duration" data-value="55193467200">55.193</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>15</td>
+            <td>79</td>
+            <td class="duration">1.638</td>
+            <td class="duration">55.193</td>
+            <td class="duration">2:9.406</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
